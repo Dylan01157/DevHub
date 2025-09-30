@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Comment optimiser les performances d'une base de données SQL ? - Dev Forum</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        primary: "#1773cf",
+        "background-light": "#f6f7f8",
+        "background-dark": "#111921",
+      },
+      fontFamily: { display: ["Inter"] },
+      borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+    },
+  },
+};
+</script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200">
+<div class="flex min-h-screen flex-col">
+  <header class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 px-10 py-3">
+    <div class="flex items-center gap-3 text-slate-900 dark:text-white">
+      <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2C12.8284 6.96921 16.0308 10.1716 21 11C16.0308 11.8284 12.8284 15.0308 12 20C11.1716 15.0308 7.96921 11.8284 3 11C7.96921 10.1716 11.1716 6.96921 12 2Z"></path>
+      </svg>
+      <h2 class="text-lg font-bold">Dev Forum</h2>
+    </div>
+    <div class="flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-400">
+      <a class="hover:text-primary" href="../index.html">Accueil</a>
+      <a class="hover:text-primary" href="../index.html">Questions</a>
+      <a class="hover:text-primary" href="#">Tags</a>
+    </div>
+  </header>
+
+  <main class="flex-1 px-10 py-8">
+    <div class="mx-auto max-w-4xl">
+      <!-- Question -->
+      <article class="rounded-lg border border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-900">
+        <h1 class="text-3xl font-bold text-slate-900 dark:text-white">Comment optimiser les performances d'une base de données SQL ?</h1>
+        <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
+          Publiée le 10 mars 2024 par <a class="font-medium text-primary hover:underline" href="#">Lucie Bernard</a>
+        </p>
+        <div class="mt-4 text-slate-600 dark:text-slate-300">
+          <p>
+            J'ai une base de données SQL qui commence à ralentir quand le volume de données augmente. Quels sont les meilleurs moyens d'optimiser les performances ? Indexation, requêtes optimisées, ou autre ? Merci pour vos retours.
+          </p>
+        </div>
+      </article>
+
+      <!-- Réponses -->
+      <section class="mt-8">
+        <h2 class="mb-4 text-xl font-bold text-slate-900 dark:text-white">3 Réponses</h2>
+        <div class="space-y-6">
+          <div class="flex items-start gap-4">
+            <img alt="Thomas Leroy avatar" class="h-10 w-10 rounded-full object-cover" src="https://randomuser.me/api/portraits/men/22.jpg"/>
+            <div class="flex-1 rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+              <div class="mb-2 flex items-center justify-between">
+                <p class="text-sm font-semibold text-slate-800 dark:text-slate-200">Thomas Leroy</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400">11 mars 2024</p>
+              </div>
+              <p class="text-sm text-slate-600 dark:text-slate-300">
+                Commencez par analyser les requêtes lentes avec des outils comme EXPLAIN. Ajoutez des index sur les colonnes utilisées dans les clauses WHERE et les jointures pour améliorer les performances.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <img alt="Emma Petit avatar" class="h-10 w-10 rounded-full object-cover" src="https://randomuser.me/api/portraits/women/33.jpg"/>
+            <div class="flex-1 rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+              <div class="mb-2 flex items-center justify-between">
+                <p class="text-sm font-semibold text-slate-800 dark:text-slate-200">Emma Petit</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400">12 mars 2024</p>
+              </div>
+              <p class="text-sm text-slate-600 dark:text-slate-300">
+                Pensez aussi à optimiser les requêtes et à utiliser des vues matérialisées si nécessaire. Évitez les SELECT * et récupérez uniquement les colonnes nécessaires.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <img alt="Nicolas Dubois avatar" class="h-10 w-10 rounded-full object-cover" src="https://randomuser.me/api/portraits/men/44.jpg"/>
+            <div class="flex-1 rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+              <div class="mb-2 flex items-center justify-between">
+                <p class="text-sm font-semibold text-slate-800 dark:text-slate-200">Nicolas Dubois</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400">13 mars 2024</p>
+              </div>
+              <p class="text-sm text-slate-600 dark:text-slate-300">
+                Enfin, surveillez la croissance des tables et archivez les données anciennes pour réduire la charge sur la base active.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ajouter une réponse via PR -->
+      <section class="mt-8 rounded-lg border border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-900">
+        <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Répondre à cette question</h3>
+        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
+          Pour répondre, vous pouvez soumettre une pull request sur GitHub et ajouter votre réponse dans ce fichier.
+        </p>
+        <a class="mt-4 inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-white text-sm font-bold hover:bg-primary/90" href="https://github.com/votre-repo/fork" target="_blank">
+          <span class="material-symbols-outlined mr-2">add</span> Ajouter une réponse sur GitHub
+        </a>
+      </section>
+
+    </div>
+  </main>
+</div>
+</body>
+</html>
