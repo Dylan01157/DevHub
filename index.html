@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>Dev Forum</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1773cf",
+              "background-light": "#f6f7f8",
+              "background-dark": "#111921",
+            },
+            fontFamily: {
+              display: ["Inter"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+</head>
+<body class="font-display">
+<div class="relative flex min-h-screen w-full flex-col bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200 group/design-root overflow-x-hidden" id="forum-page">
+<div class="flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-slate-200 dark:border-slate-800 px-10 py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-slate-900 dark:text-white">
+<svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C12.8284 6.96921 16.0308 10.1716 21 11C16.0308 11.8284 12.8284 15.0308 12 20C11.1716 15.0308 7.96921 11.8284 3 11C7.96921 10.1716 11.1716 6.96921 12 2Z"></path>
+</svg>
+<h2 class="text-lg font-bold">Dev Forum</h2>
+</div>
+<div class="flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-400">
+<a class="hover:text-primary" href="#">Accueil</a>
+<a class="hover:text-primary" href="#">Questions</a>
+<a class="hover:text-primary" href="#">Tags</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<label class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-slate-400 dark:text-slate-500">search</span>
+<input class="form-input rounded-lg border-slate-300 dark:border-slate-700 bg-background-light dark:bg-background-dark pl-10 pr-4 py-2 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-primary focus:ring-primary" placeholder="Rechercher"/>
+</label>
+<button class="flex items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold tracking-wide hover:bg-primary/90" onclick="showAskQuestionPage()">
+<span>Poser une question</span>
+</button>
+</div>
+</header>
+<main class="flex-1 px-10 py-8">
+<div class="mx-auto max-w-4xl">
+<div class="mb-8">
+<h1 class="text-3xl font-bold text-slate-900 dark:text-white">Questions</h1>
+<p class="mt-2 text-slate-500 dark:text-slate-400">Explorez les questions de la communauté ou posez la vôtre.</p>
+</div>
+<div class="mb-6">
+<label class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-4 text-slate-400 dark:text-slate-500">search</span>
+<input class="form-input w-full rounded-lg border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 pl-12 pr-4 py-3 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-primary focus:ring-primary" placeholder="Rechercher des questions"/>
+</label>
+</div>
+<div class="space-y-4">
+<h2 class="text-xl font-bold text-slate-900 dark:text-white">Questions les plus récentes</h2>
+<div class="divide-y divide-slate-200 dark:divide-slate-800 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+<a class="flex items-center justify-between gap-4 px-6 py-4 hover:bg-background-light dark:hover:bg-background-dark" href="#">
+<div class="flex-1">
+<p class="font-medium text-slate-800 dark:text-slate-200">Comment gérer les erreurs dans une application React?</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">Réponses: 5</p>
+</div>
+<div class="text-sm text-slate-500 dark:text-slate-400">Il y a 2 jours</div>
+</a>
+<a class="flex items-center justify-between gap-4 px-6 py-4 hover:bg-background-light dark:hover:bg-background-dark" href="#">
+<div class="flex-1">
+<p class="font-medium text-slate-800 dark:text-slate-200">Quelle est la meilleure façon de déployer une application Node.js?</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">Réponses: 3</p>
+</div>
+<div class="text-sm text-slate-500 dark:text-slate-400">Il y a 3 jours</div>
+</a>
+<a class="flex items-center justify-between gap-4 px-6 py-4 hover:bg-background-light dark:hover:bg-background-dark" href="#">
+<div class="flex-1">
+<p class="font-medium text-slate-800 dark:text-slate-200">Comment optimiser les performances d'une base de données SQL?</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">Réponses: 10</p>
+</div>
+<div class="text-sm text-slate-500 dark:text-slate-400">Il y a 5 jours</div>
+</a>
+<a class="flex items-center justify-between gap-4 px-6 py-4 hover:bg-background-light dark:hover:bg-background-dark" href="#">
+<div class="flex-1">
+<p class="font-medium text-slate-800 dark:text-slate-200">Quelle est la différence entre REST et GraphQL?</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">Réponses: 2</p>
+</div>
+<div class="text-sm text-slate-500 dark:text-slate-400">Il y a 7 jours</div>
+</a>
+<a class="flex items-center justify-between gap-4 px-6 py-4 hover:bg-background-light dark:hover:bg-background-dark" href="#">
+<div class="flex-1">
+<p class="font-medium text-slate-800 dark:text-slate-200">Comment mettre en place une authentification sécurisée dans une application web?</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">Réponses: 7</p>
+</div>
+<div class="text-sm text-slate-500 dark:text-slate-400">Il y a 10 jours</div>
+</a>
+</div>
+</div>
+<div class="mt-8 flex items-center justify-center gap-2">
+<a class="flex h-9 w-9 items-center justify-center rounded-full text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined text-xl">chevron_left</span>
+</a>
+<a class="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-white text-sm font-bold" href="#">1</a>
+<a class="flex h-9 w-9 items-center justify-center rounded-full text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 text-sm" href="#">2</a>
+<a class="flex h-9 w-9 items-center justify-center rounded-full text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 text-sm" href="#">3</a>
+<span class="flex h-9 w-9 items-center justify-center text-slate-500 dark:text-slate-400">...</span>
+<a class="flex h-9 w-9 items-center justify-center rounded-full text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 text-sm" href="#">10</a>
+<a class="flex h-9 w-9 items-center justify-center rounded-full text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined text-xl">chevron_right</span>
+</a>
+</div>
+</div>
+</main>
+</div>
+</div>
+<div class="relative hidden min-h-screen w-full flex-col bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200 group/design-root overflow-x-hidden" id="ask-question-page">
+<div class="flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-slate-200 dark:border-slate-800 px-10 py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-slate-900 dark:text-white">
+<svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C12.8284 6.96921 16.0308 10.1716 21 11C16.0308 11.8284 12.8284 15.0308 12 20C11.1716 15.0308 7.96921 11.8284 3 11C7.96921 10.1716 11.1716 6.96921 12 2Z"></path>
+</svg>
+<h2 class="text-lg font-bold">Dev Forum</h2>
+</div>
+<div class="flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-400">
+<a class="hover:text-primary" href="#" onclick="showForumPage()">Accueil</a>
+<a class="hover:text-primary" href="#" onclick="showForumPage()">Questions</a>
+<a class="hover:text-primary" href="#">Tags</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold tracking-wide hover:bg-primary/90" onclick="showForumPage()">
+<span class="material-symbols-outlined mr-2">arrow_back</span>
+<span>Retour</span>
+</button>
+</div>
+</header>
+<main class="flex-1 px-10 py-8">
+<div class="mx-auto max-w-4xl">
+<div class="mb-8">
+<h1 class="text-3xl font-bold text-slate-900 dark:text-white">Poser une question</h1>
+<p class="mt-2 text-slate-500 dark:text-slate-400">Suivez les étapes ci-dessous pour soumettre votre question via une pull request.</p>
+</div>
+<div class="space-y-6 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6">
+<div>
+<h2 class="text-xl font-bold text-slate-900 dark:text-white">Étape 1: Forker le dépôt</h2>
+<p class="mt-2 text-slate-600 dark:text-slate-300">Commencez par forker le dépôt du forum sur votre compte GitHub. Cela créera une copie du projet que vous pourrez modifier.</p>
+</div>
+<div>
+<h2 class="text-xl font-bold text-slate-900 dark:text-white">Étape 2: Créer une nouvelle branche</h2>
+<p class="mt-2 text-slate-600 dark:text-slate-300">Créez une nouvelle branche dans votre fork pour votre question. Donnez-lui un nom descriptif, par exemple `question/mon-titre-de-question`.</p>
+</div>
+<div>
+<h2 class="text-xl font-bold text-slate-900 dark:text-white">Étape 3: Ajouter votre question</h2>
+<p class="mt-2 text-slate-600 dark:text-slate-300">Ajoutez un nouveau fichier Markdown dans le dossier `questions`. Le nom du fichier doit correspondre au titre de votre question. Rédigez votre question en utilisant le format Markdown.</p>
+</div>
+<div>
+<h2 class="text-xl font-bold text-slate-900 dark:text-white">Étape 4: Soumettre une pull request</h2>
+<p class="mt-2 text-slate-600 dark:text-slate-300">Une fois que vous avez ajouté votre question, validez vos modifications et poussez la branche vers votre fork. Ensuite, ouvrez une pull request vers le dépôt principal du forum. Décrivez brièvement votre question dans la description de la pull request.</p>
+</div>
+<div>
+<h2 class="text-xl font-bold text-slate-900 dark:text-white">Étape 5: Revue et fusion</h2>
+<p class="mt-2 text-slate-600 dark:text-slate-300">Votre question sera examinée par les modérateurs. Une fois approuvée, elle sera fusionnée et apparaîtra sur le forum.</p>
+</div>
+</div>
+<div class="mt-8 flex justify-center">
+<a class="flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold tracking-wide hover:bg-primary/90" href="https://github.com/votre-repo/fork" target="_blank">
+<svg aria-hidden="true" class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.65.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" fill-rule="evenodd"></path></svg>
+<span>Forker sur GitHub</span>
+</a>
+</div>
+</div>
+</main>
+</div>
+</div>
+<script>
+    function showAskQuestionPage() {
+        document.getElementById('forum-page').classList.add('hidden');
+        document.getElementById('ask-question-page').classList.remove('hidden');
+    }
+    function showForumPage() {
+        document.getElementById('ask-question-page').classList.add('hidden');
+        document.getElementById('forum-page').classList.remove('hidden');
+    }
+</script>
+
+</body></html>
