@@ -46,15 +46,15 @@ Toute personne souhaitant contribuer peut suivre ce processus :
 
 2. Créer un fichier Markdown dans le dossier /questions
 
-Basé sur un template fourni (template.md)
+. Basé sur un template fourni (template.md)
 
 Contenant :
 
-un titre
+- un titre
 
-une date
+- une date
 
-un auteur
+- un auteur
 
 3. le contenu de l’article ou de la question
 
