@@ -69,7 +69,7 @@ Garder un historique clair des contributions
 Éviter la complexité d’un back-end
 Maintenir un contrôle humain avant publication
 
-## Déploiement continu (CI/CD)
+### Déploiement continu (CI/CD)
 
 DevHub intègre un pipeline d’intégration continue grâce à GitHub Actions.
 Processus automatisé
