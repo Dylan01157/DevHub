@@ -90,6 +90,7 @@ Le déploiement automatisé est géré via GitHub Actions.
 . Les utilisateurs contribuent sur la branche predev.
 . Après validation, les mainteneurs fusionnent predev dans main.
 . Cette fusion déclenche le pipeline CI/CD, qui :
+
 1. Construit les fichiers HTML/CSS statiques
 2. Met à jour le contenu sur GitHub Pages
 3. Déploie le site automatiquement
