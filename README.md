@@ -48,35 +48,34 @@ Toute personne souhaitant contribuer peut suivre ce processus :
 
 1. Forker le dépôt GitHub
 
-2.Créer une branche de travail à partir de predev
+2. Créer une branche de travail à partir de predev
 
 git checkout predev
 git pull origin predev
 git checkout -b ma-contribution
 
 
-3.Créer un fichier Markdown dans le dossier /questions
+3. Créer un fichier Markdown dans le dossier /questions
 
 Basé sur le template fourni (template.md)
 
-.Contenant :
+. Contenant :
 
 - un titre
 - une date
 - un auteur
 - le contenu de l’article ou de la question
 
-4.Commit et push sur votre branche personnelle
+4. Commit et push sur votre branche personnelle
 
 git add .
 git commit -m "Ajout d’un nouvel article"
 git push origin ma-contribution
 
 
-5.Créer une Pull Request vers la branche predev
+5. Créer une Pull Request vers la branche predev
 
 Pas vers main !
-
 L’équipe du projet relira, corrigera si besoin, puis fusionnera sur predev.
 
 Cette méthode permet de :
