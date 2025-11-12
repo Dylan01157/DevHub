@@ -26,18 +26,21 @@ Transparent 🧩
 
 Facile à maintenir 🔧
 
-'''
-devhub/
-│
-├── index.html
-├── faq.html
-├── README.md
-├── questions/
-│   └── ...
-└── .github/
-    └── workflows/
-        └── main.yml
-'''
+> Structure du projet :
+>
+> ```text
+> devhub/
+> │
+> ├── index.html
+> ├── faq.html
+> ├── README.md
+> ├── questions/
+> │   └── ...
+> └── .github/
+>     └── workflows/
+>         └── main.yml
+> `
+
 ### Fonctionnement des contributions
 
 DevHub repose sur un modèle collaboratif Git.
