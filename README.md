@@ -51,60 +51,46 @@ Toute personne souhaitant contribuer peut suivre ce processus :
 Contenant :
 
 - un titre
-
 - une date
-
 - un auteur
+- le contenu de l’article ou de la question
 
-3. le contenu de l’article ou de la question
+3. Ouvrir une Pull Request (PR) pour proposer la contribution
 
-4. Ouvrir une Pull Request (PR) pour proposer la contribution
-
-L’équipe valide et fusionne la PR après relecture ✅
+4.  L’équipe valide et fusionne la PR après relecture ✅
 
 Cette méthode permet de :
 
 Garder un historique clair des contributions
-
 Éviter la complexité d’un back-end
-
 Maintenir un contrôle humain avant publication
 
-Déploiement continu (CI/CD)
+## Déploiement continu (CI/CD)
 
 DevHub intègre un pipeline d’intégration continue grâce à GitHub Actions.
-
 Processus automatisé
 
 À chaque fusion sur la branche principale :
 
-Le workflow GitHub Actions se déclenche automatiquement
+1. Le workflow GitHub Actions se déclenche automatiquement
+2. Le fichier YAML (deploy.yml) :
 
-Le fichier YAML (deploy.yml) :
-
-Génère les pages statiques
-
-Met à jour le contenu du site
-
-Déploie automatiquement le tout sur GitHub Pages
+.Génère les pages statiques
+.Met à jour le contenu du site
+.Déploie automatiquement le tout sur GitHub Pages
 
 Ce système assure :
 
-Un déploiement automatique
+.Un déploiement automatique
+.Une validation humaine préalable via les PR
+.Une mise à jour instantanée du site après chaque contribution approuvée
 
-Une validation humaine préalable via les PR
+### Technologies utilisées
 
-Une mise à jour instantanée du site après chaque contribution approuvée
-
-Technologies utilisées
-
-HTML5 / CSS3 — Structure et mise en page du site
-
-GitHub Pages — Hébergement statique
-
-GitHub Actions — Intégration et déploiement continus
-
-Markdown — Format des contributions
+.HTML5 / CSS3 — Structure et mise en page du site
+.GitHub Pages — Hébergement statique
+.GitHub Actions — Intégration et déploiement continus
+.Markdown — Format des contributions
 
 Contribution
 
