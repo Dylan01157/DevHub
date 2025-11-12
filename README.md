@@ -84,25 +84,21 @@ Garder un historique clair des contributions
 Éviter la complexité d’un back-end
 Maintenir un contrôle humain avant publication
 
-### Déploiement continu (CI/CD)
+### 🚀 Déploiement continu (CI/CD)
 
-DevHub intègre un pipeline d’intégration continue grâce à GitHub Actions.
-Processus automatisé
+Le déploiement automatisé est géré via GitHub Actions.
+. Les utilisateurs contribuent sur la branche predev.
+. Après validation, les mainteneurs fusionnent predev dans main.
+. Cette fusion déclenche le pipeline CI/CD, qui :
+1. Construit les fichiers HTML/CSS statiques
+2. Met à jour le contenu sur GitHub Pages
+3. Déploie le site automatiquement
 
-À chaque fusion sur la branche principale :
+Ainsi :
 
-1. Le workflow GitHub Actions se déclenche automatiquement
-2. Le fichier YAML (deploy.yml) :
-
-.Génère les pages statiques
-.Met à jour le contenu du site
-.Déploie automatiquement le tout sur GitHub Pages
-
-- Ce système assure :
-
-.Un déploiement automatique
-.Une validation humaine préalable via les PR
-.Une mise à jour instantanée du site après chaque contribution approuvée
+- Les contributeurs travaillent en préproduction (predev)
+- Le site public reste stable sur main
+- Le déploiement est automatisé et contrôlé
 
 ### Technologies utilisées
 
