@@ -111,19 +111,19 @@ Contribution
 Les contributions sont les bienvenues !
 Pour participer :
 
-- 1. Cloner le projet
+- 1 Cloner le projet
 git clone https://github.com/ton-utilisateur/devhub.git
 
-- 2. Créer une nouvelle branche
+- 2 Créer une nouvelle branche
 git checkout -b ma-contribution
 
-- 3. Ajouter ton article dans /questions
+- 3 Ajouter ton article dans /questions
 
-- 4. Commit et push
+- 4 Commit et push
 git commit -m "Ajout d’un nouvel article"
 git push origin ma-contribution
 
-- 5. Créer une Pull Request sur GitHub
+- 5 Créer une Pull Request sur GitHub
 
 Objectifs pédagogiques
 
