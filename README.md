@@ -26,6 +26,115 @@ Transparent 🧩
 
 Facile à maintenir 🔧
 
+devhub/
+│
+├── index.html
+├── faq.html
+├── README.md
+├── questions/
+│   └── ...
+└── .github/
+    └── workflows/
+        └── main.yml
+
+Fonctionnement des contributions
+
+DevHub repose sur un modèle collaboratif Git.
+Toute personne souhaitant contribuer peut suivre ce processus :
+
+Forker le dépôt GitHub
+
+Créer un fichier Markdown dans le dossier /questions
+
+Basé sur un template fourni (template.md)
+
+Contenant :
+
+un titre
+
+une date
+
+un auteur
+
+le contenu de l’article ou de la question
+
+Ouvrir une Pull Request (PR) pour proposer la contribution
+
+L’équipe valide et fusionne la PR après relecture ✅
+
+Cette méthode permet de :
+
+Garder un historique clair des contributions
+
+Éviter la complexité d’un back-end
+
+Maintenir un contrôle humain avant publication
+
+Déploiement continu (CI/CD)
+
+DevHub intègre un pipeline d’intégration continue grâce à GitHub Actions.
+
+Processus automatisé
+
+À chaque fusion sur la branche principale :
+
+Le workflow GitHub Actions se déclenche automatiquement
+
+Le fichier YAML (deploy.yml) :
+
+Génère les pages statiques
+
+Met à jour le contenu du site
+
+Déploie automatiquement le tout sur GitHub Pages
+
+Ce système assure :
+
+Un déploiement automatique
+
+Une validation humaine préalable via les PR
+
+Une mise à jour instantanée du site après chaque contribution approuvée
+
+Technologies utilisées
+
+HTML5 / CSS3 — Structure et mise en page du site
+
+GitHub Pages — Hébergement statique
+
+GitHub Actions — Intégration et déploiement continus
+
+Markdown — Format des contributions
+
+Contribution
+
+Les contributions sont les bienvenues !
+Pour participer :
+
+- 1. Cloner le projet
+git clone https://github.com/ton-utilisateur/devhub.git
+
+- 2. Créer une nouvelle branche
+git checkout -b ma-contribution
+
+- 3. Ajouter ton article dans /questions
+
+- 4. Commit et push
+git commit -m "Ajout d’un nouvel article"
+git push origin ma-contribution
+
+- 5. Créer une Pull Request sur GitHub
+
+Objectifs pédagogiques
+
+Ce projet illustre trois piliers essentiels du développement moderne :
+
+La collaboration via Git
+
+La transparence et la traçabilité des contributions
+
+L’automatisation du déploiement (CI/CD)
+
 Entièrement communautaire 🌍
 Paolo L
 Shaïna L
