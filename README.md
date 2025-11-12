@@ -50,9 +50,9 @@ Toute personne souhaitant contribuer peut suivre ce processus :
 
 2. Créer une branche de travail à partir de predev
 
-git checkout predev
-git pull origin predev
-git checkout -b ma-contribution
+. git checkout predev
+. git pull origin predev
+. git checkout -b ma-contribution
 
 
 3. Créer un fichier Markdown dans le dossier /questions
@@ -68,9 +68,9 @@ Basé sur le template fourni (template.md)
 
 4. Commit et push sur votre branche personnelle
 
-git add .
-git commit -m "Ajout d’un nouvel article"
-git push origin ma-contribution
+. git add .
+. git commit -m "Ajout d’un nouvel article"
+. git push origin ma-contribution
 
 
 5. Créer une Pull Request vers la branche predev
@@ -98,7 +98,7 @@ Processus automatisé
 .Met à jour le contenu du site
 .Déploie automatiquement le tout sur GitHub Pages
 
-Ce système assure :
+- Ce système assure :
 
 .Un déploiement automatique
 .Une validation humaine préalable via les PR
