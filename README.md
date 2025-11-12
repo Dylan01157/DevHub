@@ -26,6 +26,7 @@ Transparent 🧩
 
 Facile à maintenir 🔧
 
+'''
 devhub/
 │
 ├── index.html
@@ -36,7 +37,7 @@ devhub/
 └── .github/
     └── workflows/
         └── main.yml
-
+'''
 ### Fonctionnement des contributions
 
 DevHub repose sur un modèle collaboratif Git.
