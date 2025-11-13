@@ -1,57 +1,33 @@
-name: 🚀 Deploy Static Site
-
+name: Deploy Static Site
 on:
   push:
     branches:
-      - predev   # Déclenchement uniquement sur predev
-    paths:  # facultatif si tu veux filtrer seulement certains fichiers
-       - '**.html'
-       - '**.css'
-       - '**.js'
-       - '.github/workflows/main.yml'
-       - 'build/**'
-       - 'questions/**'
-  workflow_dispatch: # Permet de déclencher manuellement le déploiement
+      - main
+  workflow_dispatch:
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
-
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: 🧩 Checkout repository
-        uses: actions/checkout@v4
-
-      - name: 🏗️ Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: 📦 Install dependencies
-        run: npm ci
-
-      - name: 🧰 Build static site
-        run: node build-questions.js   # exécute ton script pour générer HTML depuis Markdown
-
-      - name: 📤 Upload site artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: './'   # dossier à déployer
-
   deploy:
-    needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: 🚚 Deploy to GitHub Pages
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+      
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
