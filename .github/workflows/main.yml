@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - predev   # Déclenchement uniquement sur predev
+      - main     # Déclenchement sur main
     paths:  # facultatif si tu veux filtrer seulement certains fichiers
        - '**.html'
        - '**.css'
