@@ -23,6 +23,10 @@ jobs:
     steps:
       - name: 🧩 Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0    # récupère tout l’historique
+          ref: predev       # ou main si tu veux déclencher depuis main
+
 
       - name: 🏗️ Setup Node.js
         uses: actions/setup-node@v4
@@ -41,7 +45,8 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .
           git commit -m "Generate HTML from Markdown [skip ci]" || echo "No changes to commit"
-          git push origin predev
+          git push origin HEAD:predev
+
 
       - name: 📤 Upload site artifact
         uses: actions/upload-pages-artifact@v3
