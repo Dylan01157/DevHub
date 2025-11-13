@@ -1,18 +1,12 @@
 name: 🚀 Deploy Static Site
 
+# Déclenche le workflow sur push sur predev ou main, et via déclenchement manuel
 on:
   push:
     branches:
-      - predev   # Déclenchement uniquement sur predev
-      - main     # Déclenchement sur main
-    paths:  # facultatif si tu veux filtrer seulement certains fichiers
-       - '**.html'
-       - '**.css'
-       - '**.js'
-       - '.github/workflows/main.yml'
-       - 'build/**'
-       - 'questions/**'
-  workflow_dispatch: # Permet de déclencher manuellement le déploiement
+      - predev
+      - main
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -30,7 +24,7 @@ jobs:
       - name: 🧩 Checkout repository
         uses: actions/checkout@v4
 
-      - name: 🏗️ Install Node.js
+      - name: 🏗️ Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -38,13 +32,13 @@ jobs:
       - name: 📦 Install dependencies
         run: npm ci
 
-      - name: 🧰 Build static site
-        run: node build-questions.js   # exécute ton script pour générer HTML depuis Markdown
+      - name: 🧰 Build static site from Markdown
+        run: node build-questions.js   # Ton script convertissant Markdown → HTML
 
       - name: 📤 Upload site artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './'   # dossier à déployer
+          path: './'   # Le dossier à déployer (racine ou ./build si tu génères dedans)
 
   deploy:
     needs: build
