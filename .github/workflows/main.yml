@@ -1,6 +1,6 @@
 name: 🚀 Deploy Static Site
 
-# Déclenche le workflow sur push sur predev ou main, et via déclenchement manuel
+# Déclenche le workflow sur push sur predev ou main, ou via déclenchement manuel
 on:
   push:
     branches:
@@ -18,38 +18,46 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
+      # 1️⃣ Checkout
       - name: 🧩 Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0    # récupère tout l’historique
+          fetch-depth: 0  # pour récupérer tout l’historique
 
+      # 2️⃣ Installer Node.js
       - name: 🏗️ Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
+      # 3️⃣ Installer les dépendances
       - name: 📦 Install dependencies
         run: npm ci
 
+      # 4️⃣ Générer les HTML depuis Markdown
       - name: 🧰 Build static site from Markdown
-        run: node build-questions.js   # Ton script convertissant Markdown → HTML
+        run: node build-questions.js
 
-      # ✅ Nouvelle étape : commit et création automatique d'une PR
-      - name: Commit & create Pull Request
-        uses: peter-evans/create-pull-request@v5
+      # 5️⃣ Commit & push les fichiers générés sur predev avec PAT
+      - name: 📤 Commit & push HTML
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "bot@github.com"
+          git add build index.html
+          git commit -m "Generate HTML from Markdown [skip ci]" || echo "No changes to commit"
+          git push https://${{ secrets.PAT_TOKEN }}@github.com/Dylan01157/DevHub.git HEAD:predev
+
+      # 6️⃣ Upload le dossier build pour GitHub Pages
+      - name: 📤 Upload site artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          token: ${{ secrets.PAT_TOKEN }}      # ici on utilise ton PAT
-          commit-message: "Generate HTML from Markdown [skip ci]"
-          branch: predev-gh-pages-temp
-          base: predev
-          title: "Mise à jour automatique des questions"
-          body: "Mise à jour automatique générée par GitHub Actions"
+          path: './build'
 
   deploy:
-    needs: build
+    needs: build-and-deploy
     runs-on: ubuntu-latest
     environment:
       name: github-pages

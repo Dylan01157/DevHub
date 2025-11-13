@@ -12,8 +12,13 @@ dayjs.locale("fr");
 
 // Dossiers
 const questionsDir = path.join(process.cwd(), "questions");
-const outputDir = path.join(process.cwd(), "questions"); // les HTML seront dans le même dossier
+const outputDir = path.join(process.cwd(), "build"); // au lieu de questions/
+if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
+// et ensuite, tous tes fichiers HTML vont dedans
+
 const indexFile = path.join(process.cwd(), "index.html");
+
+
 
 // Crée le dossier si inexistant
 if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
