@@ -41,13 +41,12 @@ jobs:
       - name: Commit & create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT_TOKEN }}      # ici on utilise ton PAT
           commit-message: "Generate HTML from Markdown [skip ci]"
-          branch: predev-gh-pages-temp       # branche temporaire
-          base: predev                        # PR vers predev
+          branch: predev-gh-pages-temp
+          base: predev
           title: "Mise à jour automatique des questions"
           body: "Mise à jour automatique générée par GitHub Actions"
-          labels: "automerge"  # optionnel
 
   deploy:
     needs: build
