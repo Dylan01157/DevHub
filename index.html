@@ -33,6 +33,7 @@
 </head>
 <body class="font-display">
 <div class="relative flex min-h-screen w-full flex-col bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200 group/design-root overflow-x-hidden" id="forum-page">
+<<<<<<< HEAD
 <div class="flex h-full grow flex-col">
 <header class="flex items-center justify-between whitespace-nowrap border-b border-slate-200 dark:border-slate-800 px-10 py-3">
 <div class="flex items-center gap-8">
@@ -102,6 +103,110 @@
 <div class="text-sm text-slate-500 dark:text-slate-400">Il y a 7 jours</div>
 </a>
 
+=======
+  <div class="flex h-full grow flex-col">
+    <header class="flex items-center justify-between whitespace-nowrap border-b border-slate-200 dark:border-slate-800 px-10 py-3">
+      <div class="flex items-center gap-8">
+        <div class="flex items-center gap-3 text-slate-900 dark:text-white">
+          <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C12.8284 6.96921 16.0308 10.1716 21 11C16.0308 11.8284 12.8284 15.0308 12 20C11.1716 15.0308 7.96921 11.8284 3 11C7.96921 10.1716 11.1716 6.96921 12 2Z"></path>
+          </svg>
+          <h2 class="text-lg font-bold">Dev Forum</h2>
+        </div>
+        <div class="flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-400">
+          <a class="hover:text-primary" href="#">Accueil</a>
+          <a class="hover:text-primary" href="#">Questions</a>
+          <a class="hover:text-primary" href="#">Tags</a>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <label class="relative flex items-center">
+          <span class="material-symbols-outlined absolute left-3 text-slate-400 dark:text-slate-500">search</span>
+          <input class="form-input rounded-lg border-slate-300 dark:border-slate-700 bg-background-light dark:bg-background-dark pl-10 pr-4 py-2 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-primary focus:ring-primary" placeholder="Rechercher"/>
+        </label>
+        <button class="flex items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold tracking-wide hover:bg-primary/90" onclick="showAskQuestionPage()">
+          <span>Poser une question</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="flex-1 px-10 py-8">
+      <div class="mx-auto max-w-4xl">
+        <div class="mb-8">
+          <h1 class="text-3xl font-bold text-slate-900 dark:text-white">Questions</h1>
+          <p class="mt-2 text-slate-500 dark:text-slate-400">Explorez les questions de la communauté ou posez la vôtre.</p>
+        </div>
+        <div class="mb-6">
+          <label class="relative flex items-center">
+            <span class="material-symbols-outlined absolute left-4 text-slate-400 dark:text-slate-500">search</span>
+            <input class="form-input w-full rounded-lg border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 pl-12 pr-4 py-3 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-primary focus:ring-primary" placeholder="Rechercher des questions"/>
+          </label>
+        </div>
+
+        <div class="space-y-4">
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Questions les plus récentes</h2>
+          <div class="divide-y divide-slate-200 dark:divide-slate-800 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+            <a class="flex items-center justify-between gap-4 px-6 py-4 hover:bg-background-light dark:hover:bg-background-dark" href="#">
+              <div class="flex-1">
+                <p class="font-medium text-slate-800 dark:text-slate-200">Comment gérer les erreurs dans une application React?</p>
+                <p class="text-sm text-slate-500 dark:text-slate-400">Réponses: 5</p>
+              </div>
+              <div class="text-sm text-slate-500 dark:text-slate-400">Il y a 2 jours</div>
+            </a>
+
+            <a class="flex items-center justify-between gap-4 px-6 py-4 hover:bg-background-light dark:hover:bg-background-dark" href="#">
+              <div class="flex-1">
+                <p class="font-medium text-slate-800 dark:text-slate-200">Quelle est la meilleure façon de déployer une application Node.js?</p>
+                <p class="text-sm text-slate-500 dark:text-slate-400">Réponses: 3</p>
+              </div>
+              <div class="text-sm text-slate-500 dark:text-slate-400">Il y a 3 jours</div>
+            </a>
+
+            <a class="flex items-center justify-between gap-4 px-6 py-4 hover:bg-background-light dark:hover:bg-background-dark" href="questions/comment-optimiser-les-performances-dune-base-de-donnees-sql.html">
+              <div class="flex-1">
+                <p class="font-medium text-slate-800 dark:text-slate-200">Comment optimiser les performances d'une base de données SQL?</p>
+                <p class="text-sm text-slate-500 dark:text-slate-400">Réponses: 10</p>
+              </div>
+              <div class="text-sm text-slate-500 dark:text-slate-400">Il y a 5 jours</div>
+            </a>
+
+            <a class="flex items-center justify-between gap-4 px-6 py-4 hover:bg-background-light dark:hover:bg-background-dark" href="questions/quelle-est-la-difference-entre-rest-et-graphql.html">
+              <div class="flex-1">
+                <p class="font-medium text-slate-800 dark:text-slate-200">Quelle est la différence entre REST et GraphQL?</p>
+                <p class="text-sm text-slate-500 dark:text-slate-400">Réponses: 2</p>
+              </div>
+              <div class="text-sm text-slate-500 dark:text-slate-400">Il y a 7 jours</div>
+            </a>
+
+            <!-- ✅ Nouvelle question ajoutée ici -->
+            <a class="flex items-center justify-between gap-4 px-6 py-4 hover:bg-background-light dark:hover:bg-background-dark" href="questions/question-intelligence-artificielle.html">
+              <div class="flex-1">
+                <p class="font-medium text-slate-800 dark:text-slate-200">Quels sont les risques liés à l’intelligence artificielle ?</p>
+                <p class="text-sm text-slate-500 dark:text-slate-400">Réponses: 2</p>
+              </div>
+              <div class="text-sm text-slate-500 dark:text-slate-400">Il y a 1 jour</div>
+            </a>
+
+          </div>
+        </div>
+
+        <div class="mt-8 flex items-center justify-center gap-2">
+          <a class="flex h-9 w-9 items-center justify-center rounded-full text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800" href="#">
+            <span class="material-symbols-outlined text-xl">chevron_left</span>
+          </a>
+          <a class="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-white text-sm font-bold" href="#">1</a>
+          <a class="flex h-9 w-9 items-center justify-center rounded-full text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 text-sm" href="#">2</a>
+          <a class="flex h-9 w-9 items-center justify-center rounded-full text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 text-sm" href="#">3</a>
+          <span class="flex h-9 w-9 items-center justify-center text-slate-500 dark:text-slate-400">...</span>
+          <a class="flex h-9 w-9 items-center justify-center rounded-full text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 text-sm" href="#">10</a>
+          <a class="flex h-9 w-9 items-center justify-center rounded-full text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800" href="#">
+            <span class="material-symbols-outlined text-xl">chevron_right</span>
+          </a>
+        </div>
+      </div>
+    </main>
+  </div>
+>>>>>>> parent of 2ca4cbc (automatisation question)
 </div>
 </div>
 <div class="mt-8 flex items-center justify-center gap-2">
