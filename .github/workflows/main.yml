@@ -25,8 +25,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0    # récupère tout l’historique
-          ref: predev       # ou main si tu veux déclencher depuis main
-
 
       - name: 🏗️ Setup Node.js
         uses: actions/setup-node@v4
@@ -39,19 +37,17 @@ jobs:
       - name: 🧰 Build static site from Markdown
         run: node build-questions.js   # Ton script convertissant Markdown → HTML
 
-      - name: 📤 Commit & push HTML
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add .
-          git commit -m "Generate HTML from Markdown [skip ci]" || echo "No changes to commit"
-          git push origin HEAD:predev
-
-
-      - name: 📤 Upload site artifact
-        uses: actions/upload-pages-artifact@v3
+      # ✅ Nouvelle étape : commit et création automatique d'une PR
+      - name: Commit & create Pull Request
+        uses: peter-evans/create-pull-request@v5
         with:
-          path: './'   # Le dossier à déployer (racine ou ./build si tu génères dedans)
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Generate HTML from Markdown [skip ci]"
+          branch: predev-gh-pages-temp       # branche temporaire
+          base: predev                        # PR vers predev
+          title: "Mise à jour automatique des questions"
+          body: "Mise à jour automatique générée par GitHub Actions"
+          labels: "automerge"  # optionnel
 
   deploy:
     needs: build
