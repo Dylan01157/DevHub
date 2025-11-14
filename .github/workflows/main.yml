@@ -48,7 +48,8 @@ jobs:
           git config user.email "bot@github.com"
           git add build index.html
           git commit -m "Generate HTML from Markdown [skip ci]" || echo "No changes to commit"
-          git push https://${{ secrets.PAT_TOKEN }}@github.com/Dylan01157/DevHub.git HEAD:predev
+          git push https://${{ secrets.PAT_TOKEN }}@github.com/Dylan01157/DevHub HEAD:predev
+
 
       # 6️⃣ Upload le dossier build pour GitHub Pages
       - name: 📤 Upload site artifact
