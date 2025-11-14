@@ -1,0 +1,12 @@
+title: Dev Forum
+baseurl: "" # laisse vide si le repo est utilisateur/org
+url: "https://Dylan01157.github.io" # ton site GitHub Pages
+
+collections:
+  questions:
+    output: true
+    permalink: /questions/:name/
+
+markdown: kramdown
+
+theme: minima
