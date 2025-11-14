@@ -1,6 +1,9 @@
-title: Dev Forum
-baseurl: "" # laisse vide si le repo est utilisateur/org
+title: DevHub
+baseurl: ""
 url: "https://Dylan01157.github.io" # ton site GitHub Pages
+collections:
+theme: minima
+
 
 collections:
   questions:

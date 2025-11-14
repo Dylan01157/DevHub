@@ -1,38 +1,45 @@
-name: 🚀 Deploy Jekyll Site
+name: Build and Deploy DevHub
 
+# Se déclenche à chaque push sur main
 on:
   push:
     branches:
-      - predev
       - main
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
+    steps:
+      # 1️⃣ Récupérer le code du dépôt
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2️⃣ Installer Ruby
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.2
 
+      # 3️⃣ Installer Bundler et les dépendances Jekyll
       - name: Install dependencies
-        run: bundle install
+        run: |
+          gem install bundler
+          bundle install
 
-      - name: Build Jekyll site
+      # 4️⃣ Construire le site Jekyll
+      - name: Build site with Jekyll
         run: bundle exec jekyll build -d _site
 
+      # 5️⃣ Upload de l'artifact généré (_site)
+      - name: Upload site artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-pages
+          path: _site
+
+      # 6️⃣ Déployer sur GitHub Pages
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
         with:
-          path: _site
+          artifact_name: github-pages
