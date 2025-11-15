@@ -28,7 +28,7 @@ Facile à maintenir 🔧
 
 > Structure du projet :
 >
->
+>```
 >├── _config.yml 
 >├── index.html 
 >├── question.html 
@@ -46,6 +46,7 @@ Facile à maintenir 🔧
 >│ └── 2025-03-16-comment-tuer-ces-collegue.md 
 >└── reponses/ 
 >│ └── 2025-01-15-reponse-javascript.md
+>`
 
 ### Fonctionnement des contributions
 
