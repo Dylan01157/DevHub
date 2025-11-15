@@ -46,6 +46,7 @@ Facile à maintenir 🔧
 >│  
 >└── reponses/ 
 >│ └── 2025-01-15-reponse-javascript.md
+>└── template.md
 >`
 
 ### Fonctionnement des contributions
