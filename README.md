@@ -42,8 +42,8 @@ Facile à maintenir 🔧
 >├── js/ 
 >│ └── app.js 
 >├── questions/ 
->│ ├── 2025-01-15-comment-utiliser-javascript.md 
->│ └── 2025-03-16-comment-tuer-ces-collegue.md 
+>│ └── 2025-01-15-comment-utiliser-javascript.md 
+>│  
 >└── reponses/ 
 >│ └── 2025-01-15-reponse-javascript.md
 >`
