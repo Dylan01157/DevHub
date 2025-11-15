@@ -29,14 +29,14 @@ Facile à maintenir 🔧
 > Structure du projet :
 >
 >```
->├── _config.yml 
+>|
 >├── index.html 
 >├── question.html 
 >├── reponse.html 
 >├── CONTRIBUTING.md 
 >├── .github/ 
 >│ └── workflows/ 
->│ └── jekyll-gh-pages.yml 
+>│ └── main.yml 
 >├── css/ 
 >│ └── style.css 
 >├── js/ 
