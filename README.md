@@ -70,8 +70,10 @@ Basé sur le template fourni (template.md)
 . Contenant :
 
 - un titre
+- une category
 - une date
 - un auteur
+- reponses
 - le contenu de l’article ou de la question
 
 4. Commit et push sur votre branche personnelle
@@ -99,7 +101,7 @@ Le déploiement automatisé est géré via GitHub Actions.
 - Après validation, les mainteneurs fusionnent predev dans main.
 - Cette fusion déclenche le pipeline CI/CD, qui :
 
-1. Construit les fichiers HTML/CSS statiques
+1. Construit les fichiers HTML statiques à partir des fichiers .md grace au js
 2. Met à jour le contenu sur GitHub Pages
 3. Déploie le site automatiquement
 
@@ -115,6 +117,7 @@ Ainsi :
 .GitHub Pages — Hébergement statique
 .GitHub Actions — Intégration et déploiement continus
 .Markdown — Format des contributions
+.JS - Conversion .md en html
 
 Contribution
 
@@ -123,7 +126,7 @@ Les contributions sont les bienvenues !
 ### Pour participer :
 
 - ***1   Cloner le projet***
-git clone https://github.com/ton-utilisateur/devhub.git
+git clone https://github.com/Dylan01157/DevHub.git
 
 - ***2   Créer une nouvelle branche***
 git checkout -b ma-contribution
