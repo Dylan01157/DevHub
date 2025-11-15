@@ -1,4 +1,3 @@
-// Parser le frontmatter YAML
 function parseFrontmatter(content) {
     const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/;
     const match = content.match(frontmatterRegex);
@@ -11,12 +10,35 @@ function parseFrontmatter(content) {
     const markdownContent = match[2];
     
     const frontmatter = {};
+    let currentKey = null;
+    let currentArray = [];
+    
     frontmatterText.split('\n').forEach(line => {
-        const [key, ...values] = line.split(':');
-        if (key && values.length) {
-            frontmatter[key.trim()] = values.join(':').trim().replace(/^["']|["']$/g, '');
+        // Détecter une liste YAML
+        if (line.trim().startsWith('- ')) {
+            currentArray.push(line.trim().substring(2));
+        } else if (line.includes(':')) {
+            // Si on avait une liste en cours, la sauvegarder
+            if (currentKey && currentArray.length > 0) {
+                frontmatter[currentKey] = currentArray;
+                currentArray = [];
+            }
+            
+            const [key, ...values] = line.split(':');
+            currentKey = key.trim();
+            const value = values.join(':').trim().replace(/^["']|["']$/g, '');
+            
+            if (value) {
+                frontmatter[currentKey] = value;
+                currentKey = null;
+            }
         }
     });
+    
+    // Sauvegarder la dernière liste si nécessaire
+    if (currentKey && currentArray.length > 0) {
+        frontmatter[currentKey] = currentArray;
+    }
     
     return { frontmatter, content: markdownContent };
 }
@@ -40,8 +62,51 @@ async function loadMarkdown(file, type) {
         // Convertir et afficher le contenu markdown
         document.getElementById('content').innerHTML = marked.parse(content);
         
-        // Gérer les liens vers réponse/question
-        if (type === 'question' && frontmatter.reponse_id) {
+        // Gérer les liens vers réponses multiples avec chargement des titres
+        if (type === 'question' && frontmatter.reponses) {
+            const reponsesContainer = document.getElementById('reponses-links');
+            reponsesContainer.innerHTML = '<h3>Réponses disponibles :</h3>';
+            const ul = document.createElement('ul');
+            
+            const reponses = Array.isArray(frontmatter.reponses) 
+                ? frontmatter.reponses 
+                : [frontmatter.reponses];
+            
+            for (const reponseId of reponses) {
+                const li = document.createElement('li');
+                
+                // Charger le titre de la réponse
+                fetch(`reponses/${reponseId}.md`)
+                    .then(response => response.text())
+                    .then(text => {
+                        const { frontmatter: reponseFM } = parseFrontmatter(text);
+                        const link = document.createElement('a');
+                        link.href = `./reponse.html?file=reponses/${reponseId}.md`;
+                        link.textContent = reponseFM.title || reponseId;
+                        
+                        const meta = document.createElement('small');
+                        meta.className = 'reponse-meta';
+                        meta.textContent = ` - par ${reponseFM.author || 'Anonyme'}`;
+                        
+                        li.appendChild(link);
+                        li.appendChild(meta);
+                    })
+                    .catch(() => {
+                        const link = document.createElement('a');
+                        link.href = `./reponse.html?file=reponses/${reponseId}.md`;
+                        link.textContent = reponseId;
+                        li.appendChild(link);
+                    });
+                
+                ul.appendChild(li);
+            }
+            
+            reponsesContainer.appendChild(ul);
+            reponsesContainer.style.display = 'block';
+        }
+
+        // Rétrocompatibilité avec reponse_id unique
+        if (type === 'question' && frontmatter.reponse_id && !frontmatter.reponses) {
             const reponseLink = document.getElementById('reponse-link');
             const reponseLinkUrl = document.getElementById('reponse-link-url');
             reponseLink.style.display = 'block';

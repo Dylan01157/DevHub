@@ -3,7 +3,9 @@ title: Comment utiliser JavaScript pour un site statique ?
 category: JavaScript
 date: 2025-01-15
 author: Jean Dupont
-reponse_id: 2025-01-15-reponse-javascript
+reponses:
+  - 2025-01-15-reponse-javascript
+  - 2025-01-15-reponse-javascript2
 ---
 
 Je voudrais savoir comment créer un site statique collaboratif avec uniquement du JavaScript, sans utiliser Ruby ou d'autres langages backend.
