@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f8f9fa;
+}
+
+header {
+    background: white;
+    border-bottom: 3px solid #007bff;
+    padding: 30px 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+}
+
+header h1 a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+header h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #666;
+}
+
+main {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+section h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 10px;
+}
+
+.meta {
+    color: #666;
+    font-size: 0.9em;
+    margin: 10px 0;
+}
+
+.meta span {
+    margin-right: 15px;
+    display: inline-block;
+}
+
+.content {
+    margin: 20px 0;
+    line-height: 1.8;
+}
+
+.content h2 {
+    margin-top: 30px;
+    color: #333;
+}
+
+.content p {
+    margin-bottom: 15px;
+}
+
+.content code {
+    background: #f4f4f4;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+}
+
+.content pre {
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin: 15px 0;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    padding: 15px;
+    border-bottom: 1px solid #e9ecef;
+    transition: background 0.2s;
+}
+
+ul li:hover {
+    background: #f8f9fa;
+}
+
+ul li a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    text-align: center;
+    color: #666;
+}
+
+footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.reponse-link, .question-link {
+    margin: 20px 0;
+    padding: 15px;
+    background: #e7f3ff;
+    border-left: 4px solid #007bff;
+    border-radius: 5px;
+}
+
+.reponse-link a, .question-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.reponse-link a:hover, .question-link a:hover {
+    text-decoration: underline;
+}
+
+article {
+    max-width: 700px;
+}
+
+article h2 {
+    color: #007bff;
+    margin-bottom: 10px;
+}
