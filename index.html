@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions & Réponses</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Questions & Réponses</h1>
+        <p>Site collaboratif de questions et réponses</p>
+    </header>
+    
+    <main>
+        <section class="questions">
+            <h2>Questions récentes</h2>
+            <ul id="questions-list">
+                <li>Chargement...</li>
+            </ul>
+        </section>
+        
+        <section class="reponses">
+            <h2>Réponses récentes</h2>
+            <ul id="reponses-list">
+                <li>Chargement...</li>
+            </ul>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Contribuez en faisant une pull request sur GitHub !</p>
+    </footer>
+    
+    <script src="js/app.js"></script>
+    <script>
+    // Liste des fichiers (à mettre à jour quand on ajoute des fichiers)
+    const questions = [
+        'questions/2025-01-15-comment-utiliser-javascript.md',
+        'questions/2025-03-16-comment-tuer-ces-collegue.md'
+    ];
+    
+    const reponses = [
+        'reponses/2025-01-15-reponse-javascript.md'
+    ];
+    
+    loadList('questions-list', questions, 'question.html');
+    loadList('reponses-list', reponses, 'reponse.html');
+</script>
+</body>
+</html>
