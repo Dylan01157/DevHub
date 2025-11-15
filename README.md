@@ -139,6 +139,12 @@ git push origin ma-contribution
 
 - ***5   Créer une Pull Request sur GitHub***
 
+### Info
+
+De nombreux tests ont été réalisés, durant lesquels nous avons pu essayer différentes technologies (Jekyll, Ruby, etc.).
+Après mûre réflexion, nous avons choisi de rester sur du JavaScript, HTML, CSS ainsi que GitHub Actions pour automatiser notre forum DevHub.
+De nombreux tests ont également été effectués sur ce dépôt, ainsi que sur des dépôts annexes de test, comme : https://github.com/killianb15/Markdown
+
 ### Objectifs pédagogiques
 
 - Ce projet illustre trois piliers essentiels du développement moderne :
