@@ -28,18 +28,24 @@ Facile à maintenir 🔧
 
 > Structure du projet :
 >
-> ```text
-> devhub/
-> │
-> ├── index.html
-> ├── faq.html
-> ├── README.md
-> ├── questions/
-> │   └── ...
-> └── .github/
->     └── workflows/
->         └── main.yml
-> `
+>
+>├── _config.yml 
+>├── index.html 
+>├── question.html 
+>├── reponse.html 
+>├── CONTRIBUTING.md 
+>├── .github/ 
+>│ └── workflows/ 
+>│ └── jekyll-gh-pages.yml 
+>├── css/ 
+>│ └── style.css 
+>├── js/ 
+>│ └── app.js 
+>├── questions/ 
+>│ ├── 2025-01-15-comment-utiliser-javascript.md 
+>│ └── 2025-03-16-comment-tuer-ces-collegue.md 
+>└── reponses/ 
+>│ └── 2025-01-15-reponse-javascript.md
 
 ### Fonctionnement des contributions
 
